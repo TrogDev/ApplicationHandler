@@ -1,0 +1,133 @@
+@font-face {
+    font-family: "Inter";
+    src: url('@/assets/fonts/Inter.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter" !important;
+}
+
+:root {
+  --primary-color: #352C85;
+  --background-color: #fff;
+  --text-color: #2C2C2C;
+  --placeholder-color: #707070;
+  --error-color: rgb(196, 52, 52);
+  --card-color: #F2EDED;
+}
+
+.container {
+    width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.primary-color {
+    color: var(--primary-color) !important;
+}
+
+@media (max-width: 1350px) {
+    .container {
+        width: 90%;
+    }
+}
+
+#app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main {
+    margin-top: 75px;
+}
+
+.wrapped-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.logo {
+    width: 173px;
+    height: 29px;
+    display: block;
+}
+
+.popup-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
+.popup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-form__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.popup-form__input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.error-text {
+    font-size: 14px;
+    color: var(--error-color);
+    font-weight: 600;
+}
+
+.popup-link {
+    font-size: 18px;
+    color: var(--primary-color);
+    margin-top: -15px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.title {
+    color: var(--primary-color);
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.underscore {
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--primary-color);
+    width: fit-content;
+    margin: auto;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 35px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
