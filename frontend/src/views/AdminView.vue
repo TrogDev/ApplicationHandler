@@ -81,6 +81,7 @@ updateApplications()
             v-for="application in applications"
             :application="application"
             :isAdmin="true"
+            :key="application.id"
             @cancel="updateStatus(application.id, 2)"
             @accept="updateStatus(application.id, 3)"
             @work="updateStatus(application.id, 4)"

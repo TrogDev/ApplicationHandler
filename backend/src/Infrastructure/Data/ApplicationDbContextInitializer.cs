@@ -121,6 +121,7 @@ public class ApplicationDbContextInitializer
                     new Keyword() { Text = "зарплат" },
                     new Keyword() { Text = "расход" },
                     new Keyword() { Text = "доход" },
+                    new Keyword() { Text = "договор" },
                 ]
             },
             new Department()
@@ -147,6 +148,8 @@ public class ApplicationDbContextInitializer
                     new Keyword() { Text = "администри" },
                     new Keyword() { Text = "запус" },
                     new Keyword() { Text = "развер" },
+                    new Keyword() { Text = "верси" },
+                    new Keyword() { Text = "обнов" },
                 ]
             },
             new Department()
