@@ -48,6 +48,10 @@ public class ApplicationDbContextInitializer
         [
             new Department()
             {
+                Title = "Отдел не определён"
+            },
+            new Department()
+            {
                 Title = "Проектный отдел",
                 Keywords =
                 [
@@ -101,7 +105,7 @@ public class ApplicationDbContextInitializer
                     new Keyword() { Text = "документ" },
                     new Keyword() { Text = "найм" },
                     new Keyword() { Text = "работу" },
-                    new Keyword() { Text = "устроиться" },
+                    new Keyword() { Text = "устроит" },
                     new Keyword() { Text = "работник" },
                 ]
             },
@@ -128,6 +132,7 @@ public class ApplicationDbContextInitializer
                     new Keyword() { Text = "установ" },
                     new Keyword() { Text = "подключ" },
                     new Keyword() { Text = "внедр" },
+                    new Keyword() { Text = "програм" },
                 ]
             },
             new Department()

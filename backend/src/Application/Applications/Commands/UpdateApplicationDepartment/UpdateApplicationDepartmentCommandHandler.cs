@@ -1,4 +1,4 @@
-namespace ApplicationHandler.Application.Applications.Commands.UpdateApplicationStatus;
+namespace ApplicationHandler.Application.Applications.Commands.UpdateApplicationDepartment;
 
 using ApplicationHandler.Application.Common.Exceptions;
 using ApplicationHandler.Application.Common.Interfaces;
@@ -7,18 +7,18 @@ using ApplicationHandler.Domain.Enums;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 
-// Обновление статуса у запроса (принятие, отклонение)
-public class UpdateApplicationStatusCommandHandler : IRequestHandler<UpdateApplicationStatusCommand>
+// Обновление отдела у запроса
+public class UpdateApplicationDepartmentCommandHandler : IRequestHandler<UpdateApplicationDepartmentCommand>
 {
     private readonly IApplicationDbContext context;
 
-    public UpdateApplicationStatusCommandHandler(IApplicationDbContext context)
+    public UpdateApplicationDepartmentCommandHandler(IApplicationDbContext context)
     {
         this.context = context;
     }
 
     public async Task Handle(
-        UpdateApplicationStatusCommand request,
+        UpdateApplicationDepartmentCommand request,
         CancellationToken cancellationToken
     )
     {
@@ -31,7 +31,7 @@ public class UpdateApplicationStatusCommandHandler : IRequestHandler<UpdateAppli
             throw new EntityNotFoundException();
         }
 
-        application.Status = request.Status;
+        application.DepartmentId = request.DepartmentId;
 
         await context.SaveChangesAsync(cancellationToken);
     }

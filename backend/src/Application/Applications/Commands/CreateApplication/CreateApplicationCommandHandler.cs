@@ -44,16 +44,17 @@ public class CreateApplicationCommandHandler : IRequestHandler<CreateApplication
     // Определение отдела по ключевым словам
     private async Task<long> getDepartment(CreateApplicationCommand request)
     {
+        IEnumerable<Department> departments = await context.Departments.ToListAsync();
         IEnumerable<Keyword> keywords = await context.Keywords.ToListAsync();
         var departmentCounts = new Dictionary<long, int>();
+        
+        foreach (Department department in departments)
+        {
+            departmentCounts.Add(department.Id, 0);
+        }
 
         foreach (Keyword keyword in keywords)
         {
-            if (!departmentCounts.ContainsKey(keyword.DepartmentId))
-            {
-                departmentCounts.Add(keyword.DepartmentId, 0);
-            }
-
             // Если ключевое слово найдено в названии добавляем 3 балла отделу
             departmentCounts[keyword.DepartmentId] += new Regex(keyword.Text, RegexOptions.IgnoreCase)
                 .Matches(request.Title)

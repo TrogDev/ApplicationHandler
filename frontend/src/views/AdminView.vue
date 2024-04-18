@@ -45,6 +45,19 @@ async function updateStatus(id, status) {
     await updateApplications()
 }
 
+async function updateDepartment(id, departmentId) {
+    const data = new FormData()
+    data.append("departmentId", departmentId)
+
+    await axios.put(`/api/admin/applications/${id}/department`, data, {
+        headers: {
+            Authorization: `Bearer ${authStore.accessToken}`
+        }
+    })
+
+    await updateApplications()
+}
+
 updateDepartments()
 updateApplications()
 </script>
@@ -72,6 +85,7 @@ updateApplications()
             @accept="updateStatus(application.id, 3)"
             @work="updateStatus(application.id, 4)"
             @complete="updateStatus(application.id, 5)"
+            @updateDepartment="updateDepartment"
         />
     </div>
 </template>
