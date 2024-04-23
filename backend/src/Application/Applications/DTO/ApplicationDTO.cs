@@ -12,4 +12,5 @@ public record ApplicationDTO
     public required UserDTO User { get; init; }
     public required ApplicationStatus Status { get; init; }
     public required DepartmentDTO Department { get; init; }
+    public required DateTime CreatedAt { get; init; }
 }

@@ -33,6 +33,7 @@ function toggleMenu() {
             </div>
             <div class="user-menu" v-if="isShowMenu">
                 <RouterLink class="user-menu__item" to="/admin" v-if="authStore.currentUser.role == 2">Админ панель</RouterLink>
+                <RouterLink class="user-menu__item" to="/statistics" v-if="authStore.currentUser.role == 2">Статистика</RouterLink>
                 <RouterLink class="user-menu__item" to="/lk" v-else>Личный кабинет</RouterLink>
                 <p class="user-menu__item" @click="authStore.logout()">Выйти</p>
             </div>

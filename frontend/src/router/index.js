@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import ProfileView from '@/views/ProfileView.vue'
 import AdminView from '@/views/AdminView.vue'
+import StatisticsView from '@/views/StatisticsView.vue'
 import { useAuthStore } from '@/stores/auth'
 
 const router = createRouter({
@@ -24,6 +25,15 @@ const router = createRouter({
       path: '/admin',
       name: 'admin',
       component: AdminView,
+      meta: {
+        authRequired: true,
+        adminRequired: true
+      }
+    },
+    {
+      path: '/statistics',
+      name: 'statistics',
+      component: StatisticsView,
       meta: {
         authRequired: true,
         adminRequired: true

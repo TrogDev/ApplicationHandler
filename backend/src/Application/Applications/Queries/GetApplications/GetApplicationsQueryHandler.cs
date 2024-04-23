@@ -43,6 +43,7 @@ public class GetUserApplicationsQueryHandler
                             Role = e.User.Role
                         },
                         Status = e.Status,
+                        CreatedAt = e.CreatedAt,
                         Department = new DepartmentDTO()
                         {
                             Id = e.Department.Id,
